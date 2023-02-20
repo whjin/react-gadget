@@ -1,5 +1,6 @@
 import React from "react";
 import PostItem from "./PostItem";
+import postList from "../static/mock/postList.json";
 
 class PostList extends React.Component {
   constructor(props) {
@@ -13,29 +14,7 @@ class PostList extends React.Component {
   componentDidMount() {
     this.timer = setTimeout(() => {
       this.setState({
-        posts: [
-          {
-            id: 1,
-            title: "大家一起来讨论react吧",
-            author: "张三",
-            date: "2022-11-19 23:09:21",
-            vote: 0,
-          },
-          {
-            id: 2,
-            title: "大家一起来讨论react吧",
-            author: "李四",
-            date: "2022-11-19 23:09:21",
-            vote: 0,
-          },
-          {
-            id: 3,
-            title: "大家一起来讨论react吧",
-            author: "王五",
-            date: "2022-11-19 23:09:21",
-            vote: 0,
-          },
-        ],
+        posts: postList,
       });
     }, 1000);
   }

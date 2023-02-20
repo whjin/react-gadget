@@ -1,10 +1,12 @@
 import "./App.css";
-import PostList from "./PostList";
+import PostList from "./views/PostList";
+import ClickCounter from "./views/ClickCounter";
 
 function App() {
   return (
     <div>
-      <PostList></PostList>
+      <PostList />
+      <ClickCounter />
     </div>
   );
 }
