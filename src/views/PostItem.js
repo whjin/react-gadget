@@ -1,7 +1,6 @@
 import React from "react";
 
 function PostItem(props) {
-  console.log(props);
   const handleClick = () => {
     props.onVote(props.post.id);
   };
