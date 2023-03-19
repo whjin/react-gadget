@@ -1,6 +1,7 @@
 import React from "react";
 import PostItem from "./PostItem";
-import postList from "../static/mock/postList.json";
+import postList from "../../static/mock/postList.json";
+import "./post.less";
 
 class PostList extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class PostList extends React.Component {
     this.timer = null;
     this.handleVote = this.handleVote.bind(this);
   }
+
   componentDidMount() {
     this.timer = setTimeout(() => {
       this.setState({
@@ -23,6 +25,7 @@ class PostList extends React.Component {
       clearTimeout(this.timer);
     }
   }
+
   handleVote(id) {
     const posts = this.state.posts.map((item) => {
       const newItem = item.id === id ? { ...item, vote: ++item.vote } : item;
@@ -32,7 +35,7 @@ class PostList extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="post-container">
         帖子列表：
         <ul>
           {this.state.posts.map((item) => (

@@ -1,12 +1,12 @@
 import "./App.css";
-import PostList from "./views/PostList";
-import ClickCounter from "./views/ClickCounter";
+import PostList from "./views/post/PostList";
+import ContactList from "./views/contact/ContactList";
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <PostList />
-      <ClickCounter />
+      <ContactList />
     </div>
   );
 }
