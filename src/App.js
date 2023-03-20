@@ -3,7 +3,7 @@ import "./common/style/index.less";
 import PostList from "./views/post/PostList";
 import ContactList from "./views/contact/ContactList";
 import Parent from "./views/context/Parent";
-import Counter from "./views/counter/counter";
+import Counter from "./views/counter";
 
 function App () {
   return (

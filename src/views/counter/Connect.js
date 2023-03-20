@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 
-function Counter (props) {
+function Connect (props) {
   const { count, dispatch } = props;
 
-  return <div className="common-container counter-container">
+  return <div className="counter-item">
     <button onClick={() => { dispatch({ type: "COUNT_REDUCE" }); }}>-</button>
     <span className="counter-text">{count}</span>
     <button onClick={() => { dispatch({ type: "COUNT_PLUS" }); }}>+</button>
   </div>;
 }
 
-Counter = connect(state => state)(Counter);
+Connect = connect(state => state)(Connect);
 
-export default Counter;
+export default Connect;
