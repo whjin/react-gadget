@@ -1,6 +1,5 @@
 import React from "react";
 import Child from "./Child";
-import "./context.less";
 import { Provider } from "./context";
 
 class Parent extends React.Component {

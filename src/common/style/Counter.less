@@ -1,13 +1,25 @@
-.post-container {
+.common-container {
   min-width: fit-content;
   flex: 1;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  padding: 16px;
   margin-right: 8px;
   margin-bottom: 8px;
   overflow: auto;
+  padding: 8px;
   @media screen and (max-width: 700px) {
     max-width: 360px;
+  }
+}
+
+.counter-container {
+  min-width: 360px;
+  .counter-text {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+  }
+  button {
+    cursor: pointer;
   }
 }

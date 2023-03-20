@@ -1,13 +1,8 @@
 import React from "react";
-import "./contact.less";
 
 class Contact extends React.Component {
-  state = {
-    isOpen: false,
-  };
   render() {
     const { contact, openName, name, toggleOpen } = this.props;
-    const { isOpen } = this.state;
 
     return (
       <div className={`contact-group ${openName === name ? "expanded" : ""}`}>

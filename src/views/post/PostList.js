@@ -1,7 +1,6 @@
 import React from "react";
 import PostItem from "./PostItem";
 import postList from "../../static/mock/postList.json";
-import "./post.less";
 
 class PostList extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class PostList extends React.Component {
   }
   render() {
     return (
-      <div className="post-container">
+      <div className="common-container">
         帖子列表：
         <ul>
           {this.state.posts.map((item) => (

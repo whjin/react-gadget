@@ -1,6 +1,5 @@
 import React from "react";
 import ContactItem from "./ContactItem";
-import "./contact.less";
 import contactList from "../../static/mock/contactList.json";
 
 class ContactList extends React.Component {

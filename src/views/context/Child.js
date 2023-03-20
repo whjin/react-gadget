@@ -1,5 +1,4 @@
 import React from "react";
-import "./context.less";
 import context, { Consumer } from "./context";
 
 class Child extends React.Component {

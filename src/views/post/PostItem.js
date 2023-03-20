@@ -1,6 +1,6 @@
 import React from "react";
 
-function PostItem(props) {
+function PostItem (props) {
   const handleClick = () => {
     props.onVote(props.post.id);
   };
@@ -17,8 +17,8 @@ function PostItem(props) {
         创建时间：<span>{post.date}</span>
       </div>
       <div>
-        <button onClick={handleClick}>点赞</button>
-        <span>{post.vote}</span>
+        <button onClick={handleClick} style={{ cursor: 'pointer' }}>点赞</button>
+        <span style={{ marginLeft: "6px" }}>{post.vote}</span>
       </div>
     </li>
   );
