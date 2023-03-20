@@ -4,6 +4,7 @@ import PostList from "./views/post/PostList";
 import ContactList from "./views/contact/ContactList";
 import Parent from "./views/context/Parent";
 import Counter from "./views/counter";
+import TodoPage from "./views/todos";
 
 function App () {
   return (
@@ -12,6 +13,7 @@ function App () {
       <PostList />
       <ContactList />
       <Counter />
+      <TodoPage />
     </div>
   );
 }
