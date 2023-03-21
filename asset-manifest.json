@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gadget/static/css/main.8c3f7a84.css",
-    "main.js": "/react-gadget/static/js/main.fca73ab2.js",
+    "main.css": "/react-gadget/static/css/main.9b231931.css",
+    "main.js": "/react-gadget/static/js/main.f7afd44b.js",
     "static/js/787.e05d9a17.chunk.js": "/react-gadget/static/js/787.e05d9a17.chunk.js",
     "index.html": "/react-gadget/index.html",
-    "main.8c3f7a84.css.map": "/react-gadget/static/css/main.8c3f7a84.css.map",
-    "main.fca73ab2.js.map": "/react-gadget/static/js/main.fca73ab2.js.map",
+    "main.9b231931.css.map": "/react-gadget/static/css/main.9b231931.css.map",
+    "main.f7afd44b.js.map": "/react-gadget/static/js/main.f7afd44b.js.map",
     "787.e05d9a17.chunk.js.map": "/react-gadget/static/js/787.e05d9a17.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c3f7a84.css",
-    "static/js/main.fca73ab2.js"
+    "static/css/main.9b231931.css",
+    "static/js/main.f7afd44b.js"
   ]
 }
