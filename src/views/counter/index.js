@@ -6,8 +6,8 @@ class Counter extends React.Component {
     render () {
         return (
             <div className="common-container counter-container">
-                <Connect />
                 <Select />
+                <Connect />
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 function Select () {
-    const count = useSelector((state) => state.count);
+    let count = useSelector((state) => state.count);
     const dispatch = useDispatch();
 
     return <div className="counter-item">

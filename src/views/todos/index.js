@@ -1,20 +1,26 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Title from "./Title";
 import Create from "./Create";
 import Todos from "./Todos";
 import State from "./State";
+import { useSelector } from "react-redux";
 
-class TodoPage extends React.Component {
-    render () {
-        return <div className="common-container todo-container">
-            <Title />
-            <div className="content">
-                <Create />
-                <Todos />
-                <State />
-            </div>
-        </div>;
-    }
+function TodoPage () {
+    const data = useSelector(state => state.todos);
+    // console.log(data);
+
+    return <div id="todoApp" className="common-container todo-container">
+        <Title />
+        <div className="content">
+            <Create />
+            {
+                data.length ? <Fragment>
+                    <Todos />
+                    <State />
+                </Fragment> : ''
+            }
+        </div>
+    </div>;
 }
 
 export default TodoPage;
