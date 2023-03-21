@@ -5,37 +5,43 @@ function reducer (
     },
     action
 ) {
+    const { count, todos } = state;
+
     switch (action.type) {
         case "COUNT_PLUS":
-            return { count: state.count + 1 };
+            return { count: count + 1 };
         case "COUNT_REDUCE":
-            return { count: state.count - 1 };
+            return { count: count - 1 };
         case "TODO_ADD":
-            return [...state.todos, {
-                id: Date.now(),
-                title: action.title,
-                done: false
-            }];
+            return {
+                todos: [...todos, {
+                    id: Date.now(),
+                    title: action.title,
+                    done: false
+                }]
+            };
         case "TODO_DONE":
-            state.todos.map(item => {
+            todos.forEach(item => {
                 if (item.id === action.id) {
                     item.done = action.done;
                 }
             });
-            return [...state.todos];
+            return {
+                todos: [...todos]
+            };
         case "TODO_EDIT":
-            state.todos.map(item => {
+            todos.forEach(item => {
                 if (item.id === action.id) {
                     item.title = action.title;
                 }
             });
-            return [...state.todos];
+            return {
+                todos: [...todos]
+            };
         case "TODO_REMOVE":
-            state.todos = state.todos.filter(item.id === action.id);
-            return state.todos;
+            return { todos: todos.filter(item => item.id !== action.id) };
         case "TODO_REMOVE_DONE":
-            state.todos = state.todos.filter(item => !item.done);
-            return state.todos;
+            return { todos: todos.filter(item => !item.done) };
     }
     return state;
 }

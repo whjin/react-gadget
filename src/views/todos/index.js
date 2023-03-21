@@ -7,18 +7,19 @@ import { useSelector } from "react-redux";
 
 function TodoPage () {
     const data = useSelector(state => state.todos);
-    // console.log(data);
 
-    return <div id="todoApp" className="common-container todo-container">
-        <Title />
-        <div className="content">
-            <Create />
-            {
-                data.length ? <Fragment>
-                    <Todos />
-                    <State />
-                </Fragment> : ''
-            }
+    return <div id="todoApp" className="common-container">
+        <div className=" todo-wrapper">
+            <Title />
+            <div className="content">
+                <Create />
+                {
+                    data.length ? <Fragment>
+                        <Todos />
+                        <State />
+                    </Fragment> : ''
+                }
+            </div>
         </div>
     </div>;
 }
