@@ -1,12 +1,22 @@
 import { legacy_createStore as createStore, combineReducers } from "redux";
-import reducer from "./reducer";
 
-function counter (state = { count: 1 }, action) {
+function connect (state = { count: 1 }, action) {
     const { count } = state;
     switch (action.type) {
-        case "COUNT_PLUS":
+        case "CONNECT_PLUS":
             return { count: count + 1 };
-        case "COUNT_REDUCE":
+        case "CONNECT_REDUCE":
+            return { count: count - 1 };
+    }
+    return state;
+}
+
+function select (state = { count: 1 }, action) {
+    const { count } = state;
+    switch (action.type) {
+        case "SELECT_PLUS":
+            return { count: count + 1 };
+        case "SELECT_REDUCE":
             return { count: count - 1 };
     }
     return state;
@@ -49,5 +59,4 @@ function todo (state = { todos: [] }, action) {
     return state;
 }
 
-export default createStore(reducer);
-// export default createStore(combineReducers({ counter, todo }));
+export default createStore(combineReducers({ connect, select, todo }));

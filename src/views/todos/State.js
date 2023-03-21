@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 function State () {
-    const todos = useSelector(state => state.todos);
+    const todos = useSelector(state => state.todo.todos);
     const unDone = todos.filter(item => !item.done);
     const done = todos.filter(item => item.done);
     const dispathch = useDispatch();
@@ -11,10 +11,10 @@ function State () {
             <span className="word">项待完成</span>
         </span>
         {done.length ? <span className="todo-clear">
-            <span className="number">{done.length}</span>已完成事项
+            <span className="number">{done.length}</span>项已完成
             <a href="#" onClick={() => {
                 dispathch({ type: 'TODO_REMOVE_DONE' });
-            }}>Clear</a>
+            }}>清空</a>
         </span> : ''}
     </div>;
 }

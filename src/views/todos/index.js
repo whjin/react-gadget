@@ -6,7 +6,7 @@ import State from "./State";
 import { useSelector } from "react-redux";
 
 function TodoPage () {
-    const data = useSelector(state => state.todos);
+    const data = useSelector(state => state.todo.todos);
 
     return <div id="todoApp" className="common-container">
         <div className=" todo-wrapper">
