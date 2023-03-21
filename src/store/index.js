@@ -1,4 +1,5 @@
-import { legacy_createStore as createStore, combineReducers } from "redux";
+import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 function connect (state = { count: 1 }, action) {
     const { count } = state;
@@ -59,4 +60,4 @@ function todo (state = { todos: [] }, action) {
     return state;
 }
 
-export default createStore(combineReducers({ connect, select, todo }));
+export default createStore(combineReducers({ connect, select, todo }), applyMiddleware(thunk));
