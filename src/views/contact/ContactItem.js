@@ -1,11 +1,11 @@
 import React from "react";
 
 class Contact extends React.Component {
-  render() {
+  render () {
     const { contact, openName, name, toggleOpen } = this.props;
 
     return (
-      <div className={`contact-group ${openName === name ? "expanded" : ""}`}>
+      <div className={openName === name ? "expanded" : ""}>
         <dt
           onClick={() => {
             toggleOpen(openName === name ? "" : name);

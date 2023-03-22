@@ -13,33 +13,31 @@ function Item (props) {
         }
     }, [isEdit]);
 
-    return <li className={isEdit ? 'editing' : ''}>
-        <div >
-            <div className="display">
-                <div className="item">
-                    <input type="checkbox" checked={done} onChange={e => {
-                        dispatch({ type: "TODO_DONE", id, done: e.target.checked });
-                    }} />
-                    <span className={done ? 'done' : ''} onDoubleClick={() => { changeEdit(true); }}>{title}</span>
-                </div>
-                <div className="remove" onClick={() => {
-                    dispatch({ type: "TODO_REMOVE", id });
-                }}>X</div>
-            </div>
-            <div className="edit">
-                <input type="text" ref={editRef} value={val} onChange={e => setVal(e.target.value)} onBlur={() => {
-                    if (val.trim()) {
-                        dispatch({
-                            type: "TODO_EDIT",
-                            id,
-                            title: val
-                        });
-                    } else {
-                        setVal(title);
-                    }
-                    changeEdit(false);
+    return <li>
+        <div className="content">
+            <div className="form">
+                <input type="checkbox" checked={done} onChange={e => {
+                    dispatch({ type: "TODO_DONE", id, done: e.target.checked });
                 }} />
+                <span className={done ? 'done' : ''} onDoubleClick={() => { changeEdit(true); }}>{title}</span>
             </div>
+            <div className="remove" onClick={() => {
+                dispatch({ type: "TODO_REMOVE", id });
+            }}>X</div>
+        </div>
+        <div className="edit">
+            <input type="text" ref={editRef} value={val} onChange={e => setVal(e.target.value)} onBlur={() => {
+                if (val.trim()) {
+                    dispatch({
+                        type: "TODO_EDIT",
+                        id,
+                        title: val
+                    });
+                } else {
+                    setVal(title);
+                }
+                changeEdit(false);
+            }} />
         </div>
     </li>;
 }
