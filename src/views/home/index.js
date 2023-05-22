@@ -5,10 +5,10 @@ import ContactList from "../../componnet/contact/ContactList";
 import Parent from "../../componnet/context/Parent";
 import Counter from "../../componnet/counter";
 import TodoPage from "../../componnet/todos";
-import Product from "../../componnet/product";
+import Profile from "../../componnet/profile";
 
 class Home extends React.Component {
-  render() {
+  render () {
     return (
       <div className="app-container">
         <Parent />
@@ -16,7 +16,7 @@ class Home extends React.Component {
         <ContactList />
         <Counter />
         <TodoPage />
-        <Product />
+        <Profile />
       </div>
     );
   }

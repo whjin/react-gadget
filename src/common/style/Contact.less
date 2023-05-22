@@ -1,36 +1,35 @@
 .contact-list {
-    min-width: fit-content;
-    flex: 1;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    dt,
+  min-width: fit-content;
+  flex: 1;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  dt,
+  dd {
+    margin: 0;
+  }
+  dt {
+    padding: 10px;
+    font-weight: bold;
+    background-color: #eee;
+    cursor: pointer;
+    border-bottom: 1px solid#ddd;
+  }
+  dt:hover {
+    background-color: #ddd;
+  }
+  dd {
+    display: none;
+    padding: 10px;
+    border-bottom: 1px solid#bbb;
+  }
+  .expanded {
     dd {
-      margin: 0;
+      display: block;
     }
-    dt {
-      padding: 10px;
-      font-weight: bold;
-      background-color: #eee;
-      cursor: pointer;
-      border-bottom: 1px solid#ddd;
-    }
-    dt:hover {
-      background-color: #ddd;
-    }
-    dd {
-      display: none;
-      padding: 10px;
-      border-bottom: 1px solid#bbb;
-    }
-    .expanded {
-      dd {
-        display: block;
-      }
-      .checked {
-        background: green;
-      }
+    .checked {
+      background: green;
     }
   }
-  
+}
