@@ -5,7 +5,7 @@ import ContactList from "../../componnet/contact/ContactList";
 import Parent from "../../componnet/context/Parent";
 import Counter from "../../componnet/counter";
 import TodoPage from "../../componnet/todos";
-import Profile from "../../componnet/profile";
+import Profile from "../../componnet/profile/Profile";
 
 class Home extends React.Component {
   render () {
