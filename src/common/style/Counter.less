@@ -143,3 +143,35 @@
     font-size: 18px;
   }
 }
+
+.form-container,
+.scoreboard-container {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin-top: 12px;
+    input {
+      margin-left: 8px;
+    }
+  }
+  img {
+    width: 192px;
+    height: 108px;
+    margin: 0 auto;
+  }
+}
+
+.scoreboard-container {
+  label {
+    button {
+      margin-left: 8px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    button:hover {
+      border: 2px solid #333;
+    }
+  }
+}
