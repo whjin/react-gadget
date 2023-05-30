@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Avatar from "./Avatar";
 
-export default function Profile() {
+export default function Profile () {
   const initialList = [
     { id: 0, title: "Big Bellies", seen: false },
     { id: 1, title: "Lunar Landscape", seen: false },
@@ -10,11 +10,11 @@ export default function Profile() {
 
   const [list, setList] = useState(initialList);
 
-  function Profile({ children }) {
+  function Profile ({ children }) {
     return <div className="profile-container">{children}</div>;
   }
 
-  function Image() {
+  function Image () {
     return (
       <Avatar
         person={{
@@ -28,7 +28,7 @@ export default function Profile() {
     );
   }
 
-  function handleToggle(artworkId, nextSeen) {
+  function handleToggle (artworkId, nextSeen) {
     setList(
       list.map((artwork) => {
         if (artwork.id == artworkId) {
@@ -40,7 +40,7 @@ export default function Profile() {
     );
   }
 
-  function ItemList({ artworks, onToggle }) {
+  function ItemList ({ artworks, onToggle }) {
     return (
       <ul>
         {artworks.map((artwork) => (
@@ -61,12 +61,40 @@ export default function Profile() {
     );
   }
 
-  function List() {
+
+  function List () {
     return (
       <>
         <h1>Art Bucket List</h1>
         <h2>My list of art to see:</h2>
         <ItemList artworks={list} onToggle={handleToggle} />
+        <Artist />
+      </>
+    );
+  }
+
+  let nextId = 0;
+
+  function Artist () {
+    const [name, setName] = useState('');
+    const [artists, setArtists] = useState([]);
+    return (
+      <>
+        <section>
+          <input
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <button onClick={() => setArtists([
+            ...artists,
+            { id: nextId++, name: name }
+          ])}>添加</button>
+        </section>
+        <ul>
+          {artists.map(artist => (
+            <li key={artist.id}>{artist.name}</li>
+          ))}
+        </ul>
       </>
     );
   }
