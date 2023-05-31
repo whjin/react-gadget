@@ -7,7 +7,7 @@ export default function TaskList ({
 }) {
 
   return (
-    <ul>
+    <ul className="tasklist-wrapper">
       {
         tasks.map(task => (
           <li key={task.id}>
@@ -31,7 +31,7 @@ function Task ({ task, onChange, onDelete }) {
   if (isEditing) {
     taskContent = (
       <>
-        <inpit
+        <input
           value={task.text}
           onChange={e => {
             onChange({
@@ -58,7 +58,7 @@ function Task ({ task, onChange, onDelete }) {
         type="checkbox"
         checked={task.done}
         onChange={e => {
-          onC
+          onChange
             ({
               ...task,
               done: e.target.checked

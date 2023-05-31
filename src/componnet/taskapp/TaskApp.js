@@ -9,29 +9,6 @@ const initialTasks = [
   { id: 2, text: '列侬墙图片', done: false }
 ];
 
-function tasksReducer (tasks, action) {
-  switch (action) {
-    case 'added':
-      return [...tasks, {
-        id: action.id,
-        text: action.text,
-        done: false
-      }];
-    case 'changed':
-      return tasks.map(task => {
-        if (task.id === action.task.id) {
-          return action.task;
-        } else {
-          return task;
-        }
-      });
-    case 'deleted':
-      return tasks.filter(task => task.id !== action.id);
-    default:
-      throw Error('未知操作：' + action.type);
-  }
-}
-
 export default function TaskApp () {
   const [tasks, dispatch] = useReducer(
     tasksReducer,
@@ -41,7 +18,7 @@ export default function TaskApp () {
   function handleAddTask (text) {
     dispatch({
       type: 'added',
-      id: nextId,
+      id: nextId++,
       text
     });
   }
@@ -66,4 +43,27 @@ export default function TaskApp () {
       <TaskList tasks={tasks} onChangeTask={handleChangeTask} onDeleteTask={handleDeleteTask} />
     </div>
   );
+}
+
+function tasksReducer (tasks, action) {
+  switch (action.type) {
+    case 'added':
+      return [...tasks, {
+        id: action.id,
+        text: action.text,
+        done: false
+      }];
+    case 'changed':
+      return tasks.map(task => {
+        if (task.id === action.task.id) {
+          return action.task;
+        } else {
+          return task;
+        }
+      });
+    case 'deleted':
+      return tasks.filter(task => task.id !== action.id);
+    default:
+      throw Error('未知操作：' + action.type);
+  }
 }
