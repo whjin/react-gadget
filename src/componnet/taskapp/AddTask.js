@@ -1,17 +1,26 @@
 import { useState } from "react";
+import { useTasksDispatch } from "./TasksContext";
 
-export default function AddTask ({ onAddTask }) {
+let nextId = 3;
+
+export default function AddTask () {
   const [text, setText] = useState('');
+  const dispatch = useTasksDispatch();
 
   return (
     <div className="addtask-wrapper">
       <input
         value={text}
         onChange={e => setText(e.target.value)}
+        placeholder="添加任务"
       />
       <button onClick={() => {
         setText('');
-        onAddTask(text);
+        dispatch({
+          type: 'added',
+          id: nextId++,
+          text
+        });
       }}>添加</button>
     </div>
   );
