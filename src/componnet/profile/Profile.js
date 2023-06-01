@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Avatar from "./Avatar";
+import Counter from "../counter/index";
 
 export default function Profile () {
   const initialList = [
@@ -103,6 +104,7 @@ export default function Profile () {
     <Profile>
       <Image />
       <List />
+      <Counter />
     </Profile>
   );
 }

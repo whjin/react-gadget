@@ -3,6 +3,7 @@ import ContactItem from "./ContactItem";
 import contactList from "../../static/mock/contactList.json";
 import TravelPlan from '../travelPlan/TravelPlan';
 import MailClient from "../mailClient/MailClient";
+import TaskApp from "../taskApp/TaskApp";
 
 class ContactList extends React.Component {
   state = {
@@ -30,6 +31,7 @@ class ContactList extends React.Component {
             );
           })}
         </section>
+        <TaskApp />
         <TravelPlan />
         <MailClient />
       </div>

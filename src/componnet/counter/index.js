@@ -6,7 +6,7 @@ import Form from "./Form";
 class Counter extends React.Component {
     render () {
         return (
-            <div className="common-container counter-container">
+            <div className="counter-container">
                 <Select />
                 <Connect />
                 <Form />
