@@ -1,6 +1,7 @@
 import React from "react";
 import ContactItem from "./ContactItem";
 import contactList from "../../static/mock/contactList.json";
+import TravelPlan from '../travelPlan/TravelPlan';
 
 class ContactList extends React.Component {
   state = {
@@ -11,21 +12,24 @@ class ContactList extends React.Component {
     this.setState({ openName: name });
   };
 
-  render() {
+  render () {
     const { openName } = this.state;
     return (
-      <div className="common-container contact-list">
-        {Object.keys(contactList).map((item) => {
-          return (
-            <ContactItem
-              key={contactList[item].id}
-              contact={contactList[item]}
-              name={item}
-              openName={openName}
-              toggleOpen={this.toggleOpen}
-            />
-          );
-        })}
+      <div className="common-container">
+        <section className="contact-list">
+          {Object.keys(contactList).map((item) => {
+            return (
+              <ContactItem
+                key={contactList[item].id}
+                contact={contactList[item]}
+                name={item}
+                openName={openName}
+                toggleOpen={this.toggleOpen}
+              />
+            );
+          })}
+        </section>
+        <TravelPlan />
       </div>
     );
   }

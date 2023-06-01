@@ -6,8 +6,7 @@ import Parent from "../../componnet/context/Parent";
 import Counter from "../../componnet/counter";
 import TodoPage from "../../componnet/todos";
 import Profile from "../../componnet/profile/Profile";
-import TaskApp from "../../componnet/taskapp/TaskApp";
-import TravelPlan from "../../componnet/travelplan/TravelPlan";
+import TaskApp from "../../componnet/taskApp/TaskApp";
 
 class Home extends React.Component {
   render () {
@@ -20,7 +19,6 @@ class Home extends React.Component {
         <TodoPage />
         <Profile />
         <TaskApp />
-        <TravelPlan />
       </div>
     );
   }
