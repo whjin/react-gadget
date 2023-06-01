@@ -41,7 +41,7 @@ export default function TravelPlan () {
   }
 
   return (
-    <div className="travelPlan-container">
+    <div className="plan-container">
       <AddItem onAddItem={handleAddItem} />
       <PackingList items={items} onChangeItem={handleChangeItem} onDeleteItem={handleDeleteItem} />
       <hr />
