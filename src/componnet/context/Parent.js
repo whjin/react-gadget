@@ -9,7 +9,7 @@ class Parent extends React.Component {
   render() {
     const { info } = this.state;
     return (
-      <div className="context-container">
+      <div className="common-container context-container">
         <Provider value={{ info }}>
           <Child />
         </Provider>

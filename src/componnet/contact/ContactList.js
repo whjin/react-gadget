@@ -14,7 +14,7 @@ class ContactList extends React.Component {
   render() {
     const { openName } = this.state;
     return (
-      <div className="contact-list">
+      <div className="common-container contact-list">
         {Object.keys(contactList).map((item) => {
           return (
             <ContactItem

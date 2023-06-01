@@ -11,7 +11,7 @@ export default function Profile () {
   const [list, setList] = useState(initialList);
 
   function Profile ({ children }) {
-    return <div className="profile-container">{children}</div>;
+    return <div className="common-container profile-container">{children}</div>;
   }
 
   function Image () {

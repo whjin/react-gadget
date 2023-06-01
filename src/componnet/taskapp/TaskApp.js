@@ -4,7 +4,7 @@ import { TasksProvider } from "./TasksContext";
 
 export default function TaskApp () {
   return (
-    <div className="taskapp-container">
+    <div className="common-container taskapp-container">
       <TasksProvider>
         <AddTask />
         <TaskList />
