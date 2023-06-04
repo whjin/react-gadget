@@ -1,40 +1,32 @@
 import { useState } from "react";
-import { useTasks, useTasksDispatch } from "./TasksContext";
 
-export default function TaskList () {
-  const tasks = useTasks();
-
+export default function TaskList({ tasks, onChange, onDelete }) {
   return (
     <ul className="tasklist-wrapper">
-      {
-        tasks.map(task => (
-          <li key={task.id}>
-            <Task task={task} />
-          </li>
-        ))
-      }
+      {tasks.map((task) => (
+        <li key={task.id}>
+          <Task task={task} onChange={onChange} onDelete={onDelete} />
+        </li>
+      ))}
     </ul>
   );
 }
 
-function Task ({ task }) {
+function Task({ task, onChange, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useTasksDispatch();
 
   let taskContent;
-
   if (isEditing) {
     taskContent = (
       <>
         <input
           value={task.text}
-          onChange={e => dispatch({
-            type: 'changed',
-            task: {
+          onChange={(e) => {
+            onChange({
               ...task,
-              text: e.target.value
-            }
-          })}
+              text: e.target.value,
+            });
+          }}
         />
         <button onClick={() => setIsEditing(false)}>保存</button>
       </>
@@ -53,19 +45,15 @@ function Task ({ task }) {
       <input
         type="checkbox"
         checked={task.done}
-        onChange={e => dispatch({
-          type: 'changed',
-          task: {
+        onChange={(e) =>
+          onChange({
             ...task,
-            done: e.target.checked
-          }
-        })}
+            done: e.target.checked,
+          })
+        }
       />
       {taskContent}
-      <button onClick={() => dispatch({
-        type: 'deleted',
-        id: task.id
-      })}>删除</button>
+      <button onClick={() => onDelete(task.id)}>删除</button>
     </label>
   );
 }
