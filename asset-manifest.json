@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gadget/static/css/main.bec133b6.css",
-    "main.js": "/react-gadget/static/js/main.2bc52435.js",
-    "static/js/787.b1f6228d.chunk.js": "/react-gadget/static/js/787.b1f6228d.chunk.js",
+    "main.css": "/react-gadget/static/css/main.e6c13ad2.css",
+    "main.js": "/react-gadget/static/js/main.4822cee5.js",
+    "static/js/697.d9abd804.chunk.js": "/react-gadget/static/js/697.d9abd804.chunk.js",
     "index.html": "/react-gadget/index.html",
-    "main.bec133b6.css.map": "/react-gadget/static/css/main.bec133b6.css.map",
-    "main.2bc52435.js.map": "/react-gadget/static/js/main.2bc52435.js.map",
-    "787.b1f6228d.chunk.js.map": "/react-gadget/static/js/787.b1f6228d.chunk.js.map"
+    "main.e6c13ad2.css.map": "/react-gadget/static/css/main.e6c13ad2.css.map",
+    "main.4822cee5.js.map": "/react-gadget/static/js/main.4822cee5.js.map",
+    "697.d9abd804.chunk.js.map": "/react-gadget/static/js/697.d9abd804.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bec133b6.css",
-    "static/js/main.2bc52435.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4822cee5.js"
   ]
 }
