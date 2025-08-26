@@ -84,6 +84,7 @@
   },
   "devDependencies": {
     "eject": "0.0.4",
+    "eslint": "^9.34.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-webpack-plugin": "^4.0.0",
     "gh-pages": "^5.0.0",
